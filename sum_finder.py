@@ -17,7 +17,7 @@ def sum_finder (numbers, wishedsum, partial = []):
         n = numbers[i]
         remaining = numbers[i+1:]
         sum_finder(remaining, wishedsum, partial + [n])
-
+###Import txt File with numbers###
 def open_file():
     with open("lotsofnumbers.txt","r") as f:
         numbers = f.read().splitlines()
@@ -26,6 +26,7 @@ def open_file():
 
 numbers = open_file()
 
+###sumfinder(input, result)###
 result = sum_finder(numbers, 44)
 print(result)
 
