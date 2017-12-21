@@ -1,14 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
 
-This is a temporary script file.
-"""
 
-def sum_finder (numbers, wishedsum, partial = []):
+def sum_finder(numbers, wishedsum, partial=[]):
     s = sum(partial)
     
-
     if s == wishedsum:
         print("sum(%s)=%s" % (partial, wishedsum))
     if s >= wishedsum:
@@ -17,6 +11,8 @@ def sum_finder (numbers, wishedsum, partial = []):
         n = numbers[i]
         remaining = numbers[i+1:]
         sum_finder(remaining, wishedsum, partial + [n])
+
+
 ###Import txt File with numbers###
 def open_file():
     with open("lotsofnumbers.txt","r") as f:
@@ -24,10 +20,11 @@ def open_file():
         numbers = list(map(int, numbers))
     return numbers
 
+
 numbers = open_file()
 
+
 ###sumfinder(input, result)###
-result = sum_finder(numbers, 44)
-print(result)
+sum_finder(numbers, 44)
 
 print("done.")
